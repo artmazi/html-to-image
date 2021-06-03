@@ -61,7 +61,13 @@ export function getBlobFromURL(
 
   const deferred = window.fetch
     ? window
-        .fetch(url)
+        .fetch(url, {
+          method: 'GET',
+          mode: 'cors',
+          cache: 'no-cache',
+          credentials: 'same-origin',
+          headers: { 'Content-Type': 'application/json' },
+        })
         .then((response) => {
           return new Promise((res, rej) => {
             response.blob().then((blob) => {
