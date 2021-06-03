@@ -65,11 +65,11 @@ export function getBlobFromURL(
           method: 'GET',
           mode: 'cors',
           cache: 'no-cache',
-          credentials: 'same-origin',
+          //   credentials: 'same-origin',
           headers: { 'Content-Type': 'application/json' },
         })
         .then((response) => {
-          alert(3)
+          console.log({ response })
           return new Promise((res, rej) => {
             response.blob().then((blob) => {
               res({
