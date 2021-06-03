@@ -69,6 +69,7 @@ export function getBlobFromURL(
           headers: { 'Content-Type': 'application/json' },
         })
         .then((response) => {
+          alert(3)
           return new Promise((res, rej) => {
             response.blob().then((blob) => {
               res({
